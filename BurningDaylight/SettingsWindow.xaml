@@ -7,7 +7,26 @@
         xmlns:properties="clr-namespace:BurningDaylight.Properties"
         mc:Ignorable="d"
         Title="Settings" SizeToContent="WidthAndHeight">
-    <StackPanel Orientation="Vertical">
+    <StackPanel Orientation="Vertical" Margin="15">
+        <StackPanel.Resources>
+            <Style TargetType="Label">
+                <Setter Property="Width" Value="190"></Setter>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Width" Value="250"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="PasswordBox">
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Width" Value="250"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="5,20,5,5"/>
+                <Setter Property="Padding" Value="15,0"></Setter>
+            </Style>
+        </StackPanel.Resources>
         <StackPanel Orientation="Horizontal">
             <Label Content="YouTrack URL:"/>
             <TextBox Text="{Binding Path=YouTrackUrl, Source={x:Static properties:Settings.Default}, Mode=TwoWay}"/>
@@ -24,9 +43,9 @@
             <Label Content="Issues being time tracked query:"/>
             <TextBox Text="{Binding Path=IssuesBeingTimeTrackedQuery, Source={x:Static properties:Settings.Default}, Mode=TwoWay}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Button Content="Save" Click="Save_Settings"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Cancel" Click="Cancel"/>
+            <Button Content="Save" Click="Save_Settings"/>
         </StackPanel>
     </StackPanel>
 </Window>
