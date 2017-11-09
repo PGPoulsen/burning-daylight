@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using BurningDaylight.Properties;
 
 namespace BurningDaylight
@@ -8,6 +9,12 @@ namespace BurningDaylight
         public SettingsWindow()
         {
             InitializeComponent();
+            Closing += DiscardChanges;
+        }
+
+        private void DiscardChanges(object sender, CancelEventArgs e)
+        {
+            Settings.Default.Reload();
         }
 
         private void Save_Settings(object sender, RoutedEventArgs e)
@@ -23,7 +30,6 @@ namespace BurningDaylight
 
         private void Cancel(object sender, RoutedEventArgs e)
         {
-            Settings.Default.Reload();
             DialogResult = false;
             Close();
         }
