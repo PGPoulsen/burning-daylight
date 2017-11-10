@@ -8,7 +8,7 @@
         mc:Ignorable="d" ShowInTaskbar="False" Visibility="Hidden"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <tb:TaskbarIcon IconSource="if_nerolinux_24150.ico" ToolTipText="Robert's BurningMoney tray icon" x:Name="TaskbarIcon">
+        <tb:TaskbarIcon IconSource="if_nerolinux_24150.ico" ToolTipText="Robert's Burning Daylight Monitor" x:Name="TaskbarIcon">
         <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Settings" Click="Open_SettingsWindow"/>

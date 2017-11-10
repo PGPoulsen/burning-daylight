@@ -1,4 +1,4 @@
-# Burning Daylight
+# Robert's Burning Daylight Monitor
 This is a minimalistic tray icon app for Windows that connects to
 YouTrack and continuously monitor if you have a time tracker started.
 
