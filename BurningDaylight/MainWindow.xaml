@@ -12,6 +12,7 @@
         <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Settings" Click="Open_SettingsWindow"/>
+                    <MenuItem Header="Exit" Click="Exit"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>    
         </tb:TaskbarIcon>

@@ -22,7 +22,6 @@ namespace BurningDaylight
 
         private async Task MonitorTimeTracking()
         {
-
             for (;;)
             {
                 var issueService = _youTrackConnection?.CreateIssuesService();
@@ -40,7 +39,6 @@ namespace BurningDaylight
                 }
                 await Task.Delay(TimeSpan.FromMinutes(1));
             }
-
         }
 
         private void ResetYouTrackConnection()
@@ -49,7 +47,8 @@ namespace BurningDaylight
             var username = Settings.Default.YouTrackUsername;
             var password = Settings.Default.YouTrackPassword;
 
-            if (!string.IsNullOrWhiteSpace(url) && !string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password))
+            if (!string.IsNullOrWhiteSpace(url) && !string.IsNullOrWhiteSpace(username) &&
+                !string.IsNullOrWhiteSpace(password))
             {
                 _youTrackConnection = new UsernamePasswordConnection(url, username, password);
             }
@@ -66,6 +65,11 @@ namespace BurningDaylight
             {
                 ResetYouTrackConnection();
             }
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
